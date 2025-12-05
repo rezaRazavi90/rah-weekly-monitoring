@@ -176,14 +176,7 @@ resources/
 ۱. **کلون کردن پروژه**
 
 ```bash
-git clone <REPO_URL>
-cd rah
-```
-
-به‌جای `<REPO_URL>` آدرس ریپوی GitHub خود را قرار دهید، مثل:
-
-```bash
-git clone https://github.com/USERNAME/rah-weekly-monitoring.git
+git clone https://github.com/rezaRazavi90/rah-weekly-monitoring.git
 cd rah-weekly-monitoring
 ```
 
