@@ -1,0 +1,13 @@
+/* لود فونت Vazirmatn از CDN */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+/* اعمال فونت روی کل پنل فیلامنت */
+:root {
+    --fi-font-family: 'Vazirmatn', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html,
+body,
+.fi-body {
+    font-family: var(--fi-font-family);
+}
