@@ -1,59 +1,377 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# راه (رصد آموزشی هفتگی)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+سامانه **راه** یک پنل مدیریتی تحت وب برای **رصد آموزشی هفتگی دانش‌آموزان** است.
+هدف اصلی این سامانه، کمک به مدیران، معاونان و دبیران است تا به‌صورت هفتگی و ساختارمند:
 
-## About Laravel
+* وضعیت درسی هر دانش‌آموز را ببینند
+* نقاط قوت و ضعف را سریع شناسایی کنند
+* بر اساس داده، تصمیم آموزشی بگیرند؛ نه فقط بر اساس حدس و احساس
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 ایدهٔ اصلی سامانه
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+در بسیاری از مدارس، ارزیابی آموزشی عمدتاً به امتحانات نوبت اول و دوم محدود می‌شود؛
+اما در عمل، **کیفیت یادگیری** در طول سال و به‌صورت هفتگی شکل می‌گیرد.
 
-## Learning Laravel
+سامانه **راه (رصد آموزشی هفتگی)** برای همین طراحی شده است:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* تبدیل آزمون‌های کوتاه و هفتگی به **داده‌های قابل تحلیل**
+* تولید **کارنامه هفتگی** برای هر دانش‌آموز
+* ارائه **داشبورد مدیریتی** برای نگاه کلان به مدرسه، پایه، کلاس و درس‌ها
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ✨ امکانات کلیدی
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### ۱. مدیریت اطلاعات پایه
 
-### Premium Partners
+* مدیریت **پایه‌ها (Grades)**
+* مدیریت **دانش‌آموزان (Students)**
+* مدیریت **دروس (Subjects)**
+* مدیریت **آزمون‌ها (Exams)**
+* ثبت و مشاهده **نتایج آزمون‌ها (Exam Results)**
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+### ۲. رصد هفتگی و کارنامه
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* تولید **کارنامه هفتگی** برای هر دانش‌آموز
+* نمایش نتایج به صورت تحلیلی، نه فقط نمرهٔ خام
+* امکان چاپ کارنامه روی برگهٔ **A5** (متناسب با چاپگر سیاه‌و‌سفید)
+* طراحی ساختار کارنامه برای استفادهٔ هم‌زمان توسط:
 
-## Code of Conduct
+  * دانش‌آموز
+  * ولی
+  * دبیر و مدیر
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+### ۳. داشبورد مدیریتی (Filament Admin Panel)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+پنل مدیریتی با استفاده از **Filament 4** ساخته شده و شامل ویجت‌ها و گزارش‌های تحلیلی زیر (نمونه‌ها) است:
 
-## License
+* **نمای کلی وضعیت مدرسه** (School Risk Overview)
+* **میانگین نمرات هفتگی بر اساس پایه یا درس**
+* **نمودار روند میانگین هفتگی** (School Weekly Average Trend)
+* **درس‌های چالش‌برانگیز این هفته** (Problematic Subjects This Week)
+* **دانش‌آموزان با بیشترین غیبت** (Top Absent Students)
+* **دانش‌آموزان با بیشترین پیشرفت** (Top Improving Students)
+* **توزیع نمرات در قالب هیستوگرام** (Weekly Score Histogram)
+* **نمودار سهم آزمون‌ها بر اساس درس** (Subject Exam Share Chart)
+* **نمودار غیبت هفتگی بر اساس روزهای هفته** (Weekly Absences By Weekday)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> هدف این داشبورد، کمک به تصمیم‌گیری سریع و مبتنی بر داده برای مدیر مدرسه و معاون آموزشی است.
+
+---
+
+### ۴. ورود و مدیریت داده‌ها
+
+* **ورود دسته‌ای دانش‌آموزان** از طریق فایل (Imports/StudentsImport)
+* **ورود دسته‌ای نتایج آزمون‌ها** از طریق فایل (Imports/ExamResultsImport)
+* **Seeder دموی مدرسه** (`DemoSchoolSeeder`) جهت ایجاد داده‌های نمونه برای تست و ارائه
+* امکان استفاده از داده‌های دموی آماده برای نمایش سریع کارنامه‌ها و داشبوردها
+
+---
+
+### ۵. طراحی و تجربه کاربری
+
+* رابط کاربری مبتنی بر **Filament Admin Panel**
+* پشتیبانی از زبان فارسی و **چیدمان راست‌چین (RTL)**
+* استفاده از **تقویم جلالی** برای انتخاب و نمایش تاریخ‌ها (Jalali DateTime Picker)
+* تم و استایل سفارشی برای پنل ادمین (`resources/css/filament/admin/theme.css`)
+* استفاده از فونت‌ها و استایل‌های اختصاصی (جایگزینی فونت پیش‌فرض Filament)
+* نمایش لوگوی سامانه در پنل:
+
+  * `public/images/logo-rah.png`
+  * امکان استفاده در صفحهٔ ورود و داشبورد اصلی
+
+---
+
+## 🧱 معماری و تکنولوژی‌ها
+
+سامانه بر پایهٔ تکنولوژی‌های زیر توسعه داده شده است:
+
+* **PHP 8+ / Laravel** به‌عنوان فریم‌ورک اصلی
+* **Filament 4** برای پیاده‌سازی پنل مدیریتی مدرن
+* **MySQL / MariaDB / PostgreSQL** (بسته به تنظیمات `.env`)
+* **Composer** برای مدیریت وابستگی‌های PHP
+* **Node.js / NPM** برای مدیریت بسته‌ها و بیلد فرانت‌اند (Vite یا ابزار مشابه)
+* **Blade** برای قالب‌بندی صفحات (صفحات اختصاصی کارنامه و داشبورد)
+
+ساختار کلی دایرکتوری‌ها (بخشی از مهم‌ترین قسمت‌ها):
+
+```bash
+app/
+  Filament/
+    Pages/
+      AdminDashboard.php
+      ReportCardFilter.php
+      ReportCardResult.php
+    Resources/
+      Exams/
+      Grades/
+      Students/
+      Subjects/
+    Widgets/
+      AttentionNeededWidget.php
+      TopAbsentStudents.php
+      TopImprovingStudents.php
+      WeeklyScoreHistogram.php
+      SchoolRiskOverviewWidget.php
+      SchoolWeeklyAverageTrend.php
+      SubjectExamShareChart.php
+      WeeklyAbsencesByWeekday.php
+  Imports/
+    ExamResultsImport.php
+    StudentsImport.php
+  Models/
+    Exam.php
+    ExamResult.php
+    Grade.php
+    Student.php
+    Subject.php
+
+database/
+  migrations/
+  seeders/
+    DatabaseSeeder.php
+    DemoSchoolSeeder.php
+
+public/
+  css/
+  js/
+  images/
+  fonts/
+
+resources/
+  views/
+    filament/
+      pages/
+        admin-dashboard.blade.php
+        report-card-filter.blade.php
+        report-card-result.blade.php
+      widgets/
+        attention-needed-widget.blade.php
+  css/
+    filament/
+      admin/
+        theme.css
+```
+
+---
+
+## 🚀 نصب و راه‌اندازی
+
+### پیش‌نیازها
+
+* PHP 8.1 یا بالاتر
+* Composer
+* Node.js و NPM
+* پایگاه داده (مثلاً MySQL)
+* Git (در صورت کلون‌کردن از GitHub)
+
+### مراحل نصب
+
+۱. **کلون کردن پروژه**
+
+```bash
+git clone <REPO_URL>
+cd rah
+```
+
+به‌جای `<REPO_URL>` آدرس ریپوی GitHub خود را قرار دهید، مثل:
+
+```bash
+git clone https://github.com/USERNAME/rah-weekly-monitoring.git
+cd rah-weekly-monitoring
+```
+
+۲. **نصب وابستگی‌های PHP**
+
+```bash
+composer install
+```
+
+۳. **کپی کردن فایل محیطی و تنظیم آن**
+
+```bash
+cp .env.example .env
+```
+
+سپس فایل `.env` را باز کرده و موارد زیر را تنظیم کنید:
+
+* تنظیمات اتصال به دیتابیس (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`)
+* تنظیمات محلی و زمانی در صورت نیاز (`APP_LOCALE`, `APP_TIMEZONE`, `APP_URL`)
+
+۴. **تولید کلید اپلیکیشن**
+
+```bash
+php artisan key:generate
+```
+
+۵. **اجرای مایگریشن‌ها و سیدرها**
+
+```bash
+php artisan migrate --seed
+```
+
+در صورت نیاز به داده‌های نمونه‌ی مدرسه:
+
+```bash
+php artisan db:seed --class=DemoSchoolSeeder
+```
+
+۶. **نصب وابستگی‌های فرانت‌اند و بیلد**
+
+```bash
+npm install
+npm run build
+# یا برای حالت توسعه:
+npm run dev
+```
+
+۷. **اجرای سرور توسعه**
+
+```bash
+php artisan serve
+```
+
+سپس در مرورگر به آدرس زیر (یا آدرسی که فرمان بالا نمایش می‌دهد) بروید:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+## 📊 جریان کاری پیشنهادی در مدرسه
+
+۱. تعریف **پایه‌ها** و ساختار مدرسه (Grades، کلاس‌ها و دروس)
+۲. ثبت یا ایمپورت **دانش‌آموزان**
+۳. تعریف **آزمون‌های هفتگی کوتاه** برای هر درس
+۴. ثبت نتایج آزمون‌ها:
+
+* به‌صورت تکی در پنل
+* یا به‌صورت دسته‌ای از طریق Import
+
+5. مشاهدهٔ:
+
+   * **داشبورد مدیریتی** برای تحلیل وضعیت کلی و شناسایی نقاط بحرانی
+   * **کارنامه هفتگی** هر دانش‌آموز برای استفاده توسط دبیر، دانش‌آموز و ولی
+6. استفاده از گزارش‌ها برای:
+
+   * برنامه‌ریزی کلاس‌های جبرانی
+   * جلسات اولیاء و مربیان
+   * پایش و مقایسه‌ی پیشرفت در طول هفته‌ها و ماه‌ها
+
+---
+
+## 🧪 داده‌های نمونه (Demo Data)
+
+برای تست سریع سامانه و نمایش امکانات بدون ورود دستی داده‌ها:
+
+* از `DemoSchoolSeeder` استفاده شده است.
+* این سیدر می‌تواند:
+
+  * چند پایهٔ درسی
+  * تعدادی دانش‌آموز
+  * چند درس نمونه
+  * تعدادی آزمون و نتیجهٔ هفتگی
+    ایجاد کند تا نمودارها، ویجت‌ها و کارنامه‌ها بلافاصله قابل مشاهده باشند.
+
+اجرای سیدر نمونه:
+
+```bash
+php artisan db:seed --class=DemoSchoolSeeder
+```
+
+---
+
+## 🗺 نقشهٔ راه (Roadmap)
+
+برخی از توسعه‌های آتی پیشنهادی برای سامانه:
+
+* **سیستم اعلان‌ها (Notifications)**
+  برای اطلاع‌رسانی خودکار دربارهٔ:
+
+  * افت شدید نمرات
+  * افزایش غیبت‌ها
+  * وضعیت بحرانی برخی دانش‌آموزان
+
+* **داشبورد ویژهٔ اولیاء (Parent Portal)**
+  برای مشاهدهٔ:
+
+  * کارنامه هفتگی
+  * روند پیشرفت
+  * پیام‌های مدرسه
+
+* **گزارش‌گیری پیشرفته و قابل تنظیم**
+  برای مدیران منطقه و نهادهای بالادستی (گزارش‌های سفارشی، خروجی Excel/PDF، فیلترهای پیشرفته)
+
+* **تحلیل پیش‌بین (Predictive Analytics)**
+  شناسایی زودهنگام دانش‌آموزان در معرض افت تحصیلی با استفاده از روند داده‌ها.
+
+---
+
+## 🤝 مشارکت در توسعه (Contributing)
+
+برای مشارکت در توسعهٔ این پروژه:
+
+1. ریپو را Fork کنید.
+
+2. یک Branch جدید برای ویژگی خود بسازید:
+
+   ```bash
+   git checkout -b feature/new-widget
+   ```
+
+3. تغییرات خود را اعمال و Commit کنید:
+
+   ```bash
+   git commit -m "Add new dashboard widget for weekly analysis"
+   ```
+
+4. Branch را Push کنید:
+
+   ```bash
+   git push origin feature/new-widget
+   ```
+
+5. در GitHub یک Pull Request ایجاد کنید و توضیح دهید که چه تغییری انجام شده و چه مسئله‌ای را حل می‌کند.
+
+---
+
+## 🔒 نکات امنیتی
+
+* فایل `.env` **هرگز** نباید در ریپوی عمومی قرار بگیرد.
+* رمزهای عبور، توکن‌ها و هرگونه اطلاعات حساس باید خارج از کنترل نسخه (Git) مدیریت شوند.
+* پیش از استقرار در محیط واقعی مدرسه:
+
+  * تنظیمات امنیتی سرور (SSL, Firewall و ...)
+  * تنظیمات امنیتی Laravel (مثل `APP_ENV=production`, `APP_DEBUG=false`)
+    باید به‌دقت بررسی شوند.
+
+---
+
+## 📄 مجوز (License)
+
+نوع مجوز پروژه بسته به تصمیم شما قابل تنظیم است. برای مثال، در صورت انتخاب **MIT License**:
+
+* فایل `LICENSE` را در ریشهٔ پروژه ایجاد کنید.
+* متن مجوز MIT را در آن قرار دهید.
+* اشاره به مجوز را در این بخش اضافه کنید:
+
+> این پروژه تحت مجوز MIT منتشر شده است.
+> برای جزئیات بیشتر، لطفاً فایل `LICENSE` را مطالعه کنید.
+
+---
+
+## 📬 ارتباط
+
+در صورت تمایل می‌توانید:
+
+* برای گزارش باگ‌ها و پیشنهاد ویژگی‌های جدید، از **Issues** در GitHub استفاده کنید.
+* برای مشارکت در توسعه، از بخش **Pull Requests** کمک بگیرید.
+
+سامانهٔ **راه (رصد آموزشی هفتگی)** تلاشی است برای تبدیل ارزیابی‌های پراکنده و سنتی، به یک سیستم منظم، قابل‌اندازه‌گیری و تحلیلی؛ تا تصمیم‌های آموزشی مدرسه‌ها، **داده‌محورتر، دقیق‌تر و عادلانه‌تر** باشد.
